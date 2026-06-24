@@ -19,10 +19,6 @@ import { toast } from "react-toastify";
 import { ClipLoader } from "react-spinners";
 import MarkdownPreview from "@uiw/react-markdown-preview";
 
-// const sum = (a, b) => {
-//     return a+b;
-// }
-
 const App = () => {
   const [isNoContent, setIsNoContent] = useState(true);
   const [screen, setScreen] = useState("analyze");
