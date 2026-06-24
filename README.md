@@ -1,16 +1,120 @@
-# React + Vite
+# CodeLens – AI Powered Code Reviewer
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+CodeLens is an AI-powered code review platform that helps developers write better code through intelligent analysis, automated reviews, quality scoring, and detailed explanations.
 
-Currently, two official plugins are available:
+Built with React and Google's Gemini AI, CodeLens provides actionable feedback on code quality, readability, maintainability, security, and best practices in seconds.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+To see the final result here is the Vercel link: https://code-lens-ai-powered-code-reviewer.vercel.app/
 
-## React Compiler
+---
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## Features
 
-## Expanding the ESLint configuration
+- AI-Powered Code Analysis
+- Code Quality Scoring
+- Detailed Review Reports
+- Code Explanation
+- Security & Best Practice Checks
+- Instant Feedback
+- Modern and Responsive UI
+- Fast Performance with Vite
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+---
+
+## Tech Stack
+
+### Frontend
+- React
+- Vite
+- Tailwind CSS
+- React Icons
+
+### AI
+- Google Gemini API
+
+### Deployment
+- Vercel
+
+---
+
+## Getting Started
+
+### Clone the Repository
+
+```bash
+git clone https://github.com/YOUR_USERNAME/CodeLens-AI-Powered-Code-Reviewer.git
+cd CodeLens-AI-Powered-Code-Reviewer
+```
+
+### Install Dependencies
+
+```bash
+npm install
+```
+
+### Configure Environment Variables
+
+Create a `.env` file in the root directory:
+
+```env
+VITE_GEMINI_API_KEY=YOUR_API_KEY
+```
+
+### Start Development Server
+
+```bash
+npm run dev
+```
+
+The application will run locally on:
+
+```bash
+http://localhost:5173
+```
+
+---
+
+## Build for Production
+
+```bash
+npm run build
+```
+
+Preview production build:
+
+```bash
+npm run preview
+```
+
+---
+
+## Deployment
+
+This project is optimized for deployment on Vercel.
+
+1. Push the project to GitHub.
+2. Import the repository into Vercel.
+3. Add the environment variable:
+
+```env
+VITE_GEMINI_API_KEY=YOUR_API_KEY
+```
+
+4. Deploy.
+
+---
+
+## License
+
+This project is licensed under the MIT License.
+
+---
+
+## Author
+
+**Deepti Singh**  
+Software Developer
+
+Email: deeptisingh2710@gmail.com  
+
+Feel free to reach out for collaboration, feedback, or project discussions.
