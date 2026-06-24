@@ -1,7 +1,7 @@
 import { GoogleGenAI } from "@google/genai";
-import { api_key } from "./helper.js";
-
-const ai = new GoogleGenAI({ apiKey: api_key });
+const ai = new GoogleGenAI({
+  apiKey: import.meta.env.VITE_GEMINI_API_KEY,
+});
 
 const SYSTEM_PROMPT_ANALYZE = `
 You are an expert Senior Software Engineer, Security Auditor, and Code Reviewer.
@@ -122,7 +122,7 @@ export async function main(code, language) {
   const userPrompt = `Language: ${language}\n\nCode to review:\n${code}`;
 
   const response = await ai.models.generateContent({
-    model: "gemini-2.5-flash",
+    model: "gemini-2.5-flash-lite",
     contents: userPrompt,
     config: {
       systemInstruction: SYSTEM_PROMPT_ANALYZE,
@@ -138,10 +138,11 @@ export async function explain(code, language) {
   const userPrompt = `Language: ${language}\n\nCode to explain:\n${code}`;
 
   const response = await ai.models.generateContent({
-    model: "gemini-2.5-flash",
+    model: "gemini-2.5-flash-lite",
     contents: userPrompt,
     config: {
       systemInstruction: SYSTEM_PROMPT_EXPLAIN,
+      maxOutputTokens: 2048,
     },
   });
 
@@ -153,9 +154,11 @@ export async function fix(code, language) {
   const userPrompt = `Language: ${language}\n\nCode to fix:\n${code}`;
 
   const response = await ai.models.generateContent({
-    model: "gemini-2.5-flash",
+    model: "gemini-2.5-flash-lite",
     contents: userPrompt,
-    systemInstruction: SYSTEM_PROMPT_FIX,
+    config: {
+      systemInstruction: SYSTEM_PROMPT_FIX,
+    },
   });
 
   console.log("Gemini fix response:", response);

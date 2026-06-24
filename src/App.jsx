@@ -90,9 +90,9 @@ const App = () => {
 
       setData(parsed);
       } catch (error) {
-        console.error(error);
+        // console.error(error);
         toast.error("Analysis failed. Please try again.");
-        setIsNoContent(true);                     // ← reset on failure instead of fake data
+        setIsNoContent(true);                     
       } finally {
         setLoading(false);
       }
@@ -124,18 +124,17 @@ const App = () => {
       };
 
       setLoading(true);
-    setScreen("fix");
-    let res = await fix(code, language);
-    console.log("FIX RESULT:", res);   // ← see what comes back
-    setCode(res);
-    setScreen("analyze");
-  } catch (error) {
-    console.error("FULL FIX ERROR:", error);          // ← open DevTools → Console
-    toast.error(error?.message || JSON.stringify(error));  // ← show real message
-  } finally {
-    setLoading(false);
-  }
-};
+      setScreen("fix");
+      let res = await fix(code, language);
+      setCode(res);
+      setScreen("analyze");
+    } catch (error) {
+      console.error("FULL FIX ERROR:", error);          
+      toast.error(error?.message || JSON.stringify(error)); 
+    } finally {
+      setLoading(false);
+    }
+  };
 
   return (
     <>
